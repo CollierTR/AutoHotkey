@@ -44,6 +44,14 @@ Esc::CapsLock
     }
 }
 
+; Hot reload the script
+#HotIf WinActive("ahk_exe Code.exe")
+~^s:: ; ~ mean "pass through" non-blocking hotkey
+{
+    Sleep 100
+    Reload
+}
+
 
 ; # = Windows Key
 ; ! = Alt Key
