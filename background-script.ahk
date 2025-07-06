@@ -1,10 +1,13 @@
 ﻿#Requires AutoHotkey v2.0
 #SingleInstance Force
 
-; Send a message "hello"
-!x::msgbox "hello world!"
+chromePath := "C:\Program Files\Google\Chrome\Application\chrome.exe"
+downloadsPath := "C:\Users\Trist\Downloads"
+helpFile := A_ProgramFiles "\AutoHotkey\v2\AutoHotkey.chm"
+email := "tristan.collier@bonnieplants.com"
 
-; Key Remapping
+
+;----------------------------<{ Key Remapping }> 
 CapsLock::Esc
 Esc::CapsLock
 !h::Left     ; Alt+h → Left arrow
@@ -17,23 +20,16 @@ Esc::CapsLock
 +!l::Send "+{Right}"  ; Alt+Shift+l
 
 
-; Hot Strings
-::btw::by the way ; on tab/space
-:*:brb::be right back ; instantaneous
-
-; Run/Open Applications
-#c::Run "C:\Program Files\Google\Chrome\Application\chrome.exe"
-; #::Run "chrome"
-#o::Run "C:\Users\Trist\Downloads"
-#h::Run A_ProgramFiles "\AutoHotkey\v2\AutoHotkey.chm" ; Open AutoHotKey Docs
+;----------------------------<{ Shortcuts }> 
+#c::Run chromePath
+#o::Run downloadsPath
+#h::Run helpFile
 #a::Edit ; This opens this file in the default editor
 
-; Send Hot Keys
-; +^0::{
-;     Sleep 100
-;     SetKeyDelay 50  ; 50ms between each keystroke
-;     SendText "tristan.collier@bonnieplants.com"
-; }
+
+;----------------------------<{ Hot Strings }> 
+::btw::by the way ; on tab/space
+:*:brb::be right back ; instantaneous
 +^0:: {
     Sleep 200
     email := "tristan.collier@bonnieplants.com"
@@ -44,6 +40,8 @@ Esc::CapsLock
     }
 }
 
+
+;----------------------------<{ Script Automation & Dev Shortcuts }> 
 ; Hot reload the script
 #HotIf WinActive("ahk_exe Code.exe")
 ~^s:: ; ~ mean "pass through" non-blocking hotkey
@@ -53,6 +51,7 @@ Esc::CapsLock
 }
 
 
+;----------------------------<{ Key Legend }> 
 ; # = Windows Key
 ; ! = Alt Key
 ; + = Control
@@ -65,13 +64,14 @@ Esc::CapsLock
 ; {PgDn}        = Page Down
 ; {F1} - {F24}   = Function keys
 
-; Other Examples:
-; Workspace Launcher
+
+
+;----------------------------<{ Other }> 
+; Workspace Launcher Example:
 ; ^!1:: {
 ;     Run "code"
 ;     Run "brave.exe --new-window https://stackoverflow.com"
 ;     Run "C:\Path\To\Slack.exe"
 ; }
-
 
 ; Learning Tutorial: https://www.youtube.com/watch?v=pT4BRiOEVY0&list=WL&index=5
