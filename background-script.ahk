@@ -39,7 +39,7 @@ Esc::CapsLock
 ; Application/Link Variables
 chromePath := "C:\Program Files\Google\Chrome\Application\chrome.exe"
 downloadsPath := "C:\Users\Trist\Downloads"
-todoistURL := "https://app.todoist.com/app/today"
+todoist := "chrome.exe --new-window --app=https://app.todoist.com/app/today"
 spotifyURL := "https://open.spotify.com/playlist/140tJ4I1234W5u8F4J5PcV"
 helpFile := A_ProgramFiles "\AutoHotkey\v2\AutoHotkey.chm"
 
@@ -47,6 +47,7 @@ helpFile := A_ProgramFiles "\AutoHotkey\v2\AutoHotkey.chm"
 #o::Run downloadsPath ; This Shortcut opens the Downloads folder
 #h::Run helpFile ; This opens the AutoHotKey documentation for quick reference
 #a::Edit ; This opens this file in the default editor for quick editing
+#t::Run todoist
 
 
 
