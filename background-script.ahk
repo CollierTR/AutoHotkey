@@ -1,5 +1,48 @@
-﻿#Requires AutoHotkey v2.0
+﻿
+#Requires AutoHotkey v2.0
 #SingleInstance Force
+
+global zLayer := false
+
+*z:: {
+    global zLayer
+    KeyWait("z", "T0.1") ; Wait up to 200ms for release
+
+    if (!GetKeyState("z", "P")) {
+        ; Tap detected
+        Send("z")
+    } else {
+        ; Hold detected
+        zLayer := true
+        ; Wait until key is released
+        KeyWait("z")
+        zLayer := false
+    }
+}
+
+
+#HotIf zLayer
+
+; Escape common patterns
+i::Send("zi")
+o::Send("zo")
+
+; Emails
+e::Send("hi@ethanppl.com")
+g::Send("hi@ethanppl.com")
+
+; Simplify complicated shortcut keys
+v::Send("^+v")
+n::Send("^+a")
+x::Send("!{F4}")
+
+; Arrows
+j::Send("{Down}")
+k::Send("{Up}")
+h::Send("{Left}")
+l::Send("{Right}")
+
+#HotIf
 
 
 
@@ -43,7 +86,7 @@ todoist := "chrome.exe --new-window --app=https://app.todoist.com/app/today"
 spotifyURL := "https://open.spotify.com/playlist/140tJ4I1234W5u8F4J5PcV"
 helpFile := A_ProgramFiles "\AutoHotkey\v2\AutoHotkey.chm"
 
-#c::Run chromePath ; Open Chrome
+#b::Run chromePath ; Open Chrome
 #o::Run downloadsPath ; This Shortcut opens the Downloads folder
 #h::Run helpFile ; This opens the AutoHotKey documentation for quick reference
 #a::Edit ; This opens this file in the default editor for quick editing
