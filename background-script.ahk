@@ -6,7 +6,7 @@ global zLayer := false
 
 *z:: {
     global zLayer
-    KeyWait("z", "T0.1") ; Wait up to 200ms for release
+    KeyWait("z", "T0.15") ; Wait up to 200ms for release
 
     if (!GetKeyState("z", "P")) {
         ; Tap detected
@@ -54,8 +54,8 @@ Esc::CapsLock
 
 ; Use Vim motions for Arrow key replacement
 !h::Left     ; Alt+h → Left arrow
-!j::Down     ; Alt+j → Down arrow
-!k::Up       ; Alt+k → Up arrow
+;!j::Down     ; Alt+j → Down arrow
+;!k::Up       ; Alt+k → Up arrow
 !l::Right    ; Alt+l → Right arrow
 
 ; Add Highlight Selection to Vim Motions on holding Shift Key
@@ -83,7 +83,7 @@ Esc::CapsLock
 chromePath := "C:\Program Files\Google\Chrome\Application\chrome.exe"
 downloadsPath := "C:\Users\Trist\Downloads"
 todoist := "chrome.exe --new-window --app=https://app.todoist.com/app/today"
-spotifyURL := "https://open.spotify.com/playlist/140tJ4I1234W5u8F4J5PcV"
+spotify := "chrome.exe --new-window --app=https://open.spotify.com/playlist/140tJ4I1234W5u8F4J5PcV"
 helpFile := A_ProgramFiles "\AutoHotkey\v2\AutoHotkey.chm"
 
 #b::Run chromePath ; Open Chrome
@@ -91,6 +91,7 @@ helpFile := A_ProgramFiles "\AutoHotkey\v2\AutoHotkey.chm"
 #h::Run helpFile ; This opens the AutoHotKey documentation for quick reference
 #a::Edit ; This opens this file in the default editor for quick editing
 #t::Run todoist
+#s::Run spotify
 
 
 
