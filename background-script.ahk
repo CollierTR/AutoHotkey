@@ -2,6 +2,45 @@
 #Requires AutoHotkey v2.0
 #SingleInstance Force
 
+;--------------<{ ; layer }> 
+
+global powerPinky := false
+
+`;:: {
+    global powerPinky
+    KeyWait(";", "T0.15") ; Wait up to 200ms for release
+
+    if (!GetKeyState(";", "P")) {
+        ; Tap detected
+        SendText(";")
+    } else {
+        ; Hold detected;
+        powerPinky := true
+        ; Wait until key is released
+        KeyWait(";")
+        powerPinky := false
+    }
+}  
+
+#HotIf powerPinky
+
+; Escape common patterns
+w::Send(";w")
+q::Send(";q")
+
+1:: Run("python ..\pyvda\test.py --switch 1", , "Hide")
+2:: Run("python ..\pyvda\test.py --switch 2", , "Hide")
+3:: Run("python ..\pyvda\test.py --switch 3", , "Hide")
+4:: Run("python ..\pyvda\test.py --switch 4", , "Hide")
+5:: Run("python ..\pyvda\test.py --switch 5", , "Hide")
+
+
+#HotIf
+
+
+
+;----------------------------<{ z layer }> 
+
 global zLayer := false
 
 *z:: {
@@ -10,7 +49,7 @@ global zLayer := false
 
     if (!GetKeyState("z", "P")) {
         ; Tap detected
-        Send("z")
+        SendText("z")
     } else {
         ; Hold detected
         zLayer := true
@@ -65,8 +104,8 @@ Esc::CapsLock
 +!l::Send "+{Right}" 
 
 ; This Should move windows between screens...
-^l::Send "+#{Right}"
-^h::Send "+#{Left}"
++^l::Send "+#{Right}"
++^h::Send "+#{Left}"
 
 ; This Should move windows between zones of parent monitor...
 !#l::Send "#{Right}"
@@ -93,6 +132,13 @@ helpFile := A_ProgramFiles "\AutoHotkey\v2\AutoHotkey.chm"
 #t::Run todoist
 #s::Run spotify
 
+
+;----------------------------<{ VD Commander }> 
+#1:: Run "python ..\pyvda\test.py --switch 1"
+#2:: Run "python ..\pyvda\test.py --switch 2"
+#3:: Run "python ..\pyvda\test.py --switch 3"
+#4:: Run "python ..\pyvda\test.py --switch 4"
+#5:: Run "python ..\pyvda\test.py --switch 5"
 
 
 
