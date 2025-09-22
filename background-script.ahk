@@ -25,14 +25,17 @@ global powerPinky := false
 #HotIf powerPinky
 
 ; Escape common patterns
-w::Send(";w")
-q::Send(";q")
+w::Send(":w")
+q::Send(":q")
 
+; VD Commander integration
 1:: Run("python ..\pyvda\test.py --switch 1", , "Hide")
 2:: Run("python ..\pyvda\test.py --switch 2", , "Hide")
 3:: Run("python ..\pyvda\test.py --switch 3", , "Hide")
 4:: Run("python ..\pyvda\test.py --switch 4", , "Hide")
 5:: Run("python ..\pyvda\test.py --switch 5", , "Hide")
+
+
 
 
 #HotIf
@@ -116,6 +119,7 @@ Esc::CapsLock
 
 
 
+
 ;----------------------------<{ Shortcuts }> 
 
 ; Application/Link Variables
@@ -140,7 +144,8 @@ helpFile := A_ProgramFiles "\AutoHotkey\v2\AutoHotkey.chm"
 #4:: Run "python ..\pyvda\test.py --switch 4"
 #5:: Run "python ..\pyvda\test.py --switch 5"
 
-
+; Some alt F4 action!
+#p:: Send "!{f4}"
 
 ;----------------------------<{ Hot Strings }> 
 ::btw::by the way ; on tab/space
