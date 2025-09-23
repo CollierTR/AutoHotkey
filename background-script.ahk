@@ -46,7 +46,7 @@ q::Send(":q")
 
 global zLayer := false
 
-*z:: {
+z:: {
     global zLayer
     KeyWait("z", "T0.15") ; Wait up to 200ms for release
 
@@ -61,7 +61,6 @@ global zLayer := false
         zLayer := false
     }
 }
-
 
 #HotIf zLayer
 
