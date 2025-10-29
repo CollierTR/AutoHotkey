@@ -126,13 +126,19 @@ chromePath := "C:\Program Files\Google\Chrome\Application\chrome.exe"
 downloadsPath := "C:\Users\Trist\Downloads"
 todoist := "chrome.exe --new-window --app=https://app.todoist.com/app/today"
 spotify := "chrome.exe --new-window --app=https://open.spotify.com/playlist/140tJ4I1234W5u8F4J5PcV"
+typing := "chrome.exe --new-window --app=https://monkeytype.com/"
+chatgpt := "chrome.exe --new-window --app=https://chatgpt.com/"
 helpFile := A_ProgramFiles "\AutoHotkey\v2\AutoHotkey.chm"
+terminal := "C:\Users\TristanCollier\AppData\Local\Microsoft\WindowsApps\wt.exe -p Ubuntu"
 
 #b::Run chromePath ; Open Chrome
 #o::Run downloadsPath ; This Shortcut opens the Downloads folder
-#h::Run helpFile ; This opens the AutoHotKey documentation for quick reference
-#a::Edit ; This opens this file in the default editor for quick editing
+#/::Run helpFile ; This opens the AutoHotKey documentation for quick reference
+;#a::Edit ; This opens this file in the default editor for quick editing
 #t::Run todoist
+#a::Run chatgpt
+#y::Run typing
+#Enter::Run terminal
 #s::Run spotify
 
 
