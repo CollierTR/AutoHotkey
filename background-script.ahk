@@ -128,6 +128,8 @@ todoist := "chrome.exe --new-window --app=https://app.todoist.com/app/today"
 spotify := "chrome.exe --new-window --app=https://open.spotify.com/playlist/140tJ4I1234W5u8F4J5PcV"
 typing := "chrome.exe --new-window --app=https://monkeytype.com/"
 chatgpt := "chrome.exe --new-window --app=https://chatgpt.com/"
+calendar := "chrome.exe --new-window --app=https://calendar.google.com/calendar/u/0/r/day?pli=1"
+addToCalendar := "chrome.exe --new-window --app=https://cal.new/"
 helpFile := A_ProgramFiles "\AutoHotkey\v2\AutoHotkey.chm"
 terminal := "C:\Users\TristanCollier\AppData\Local\Microsoft\WindowsApps\wt.exe -p Ubuntu"
 
@@ -136,6 +138,8 @@ terminal := "C:\Users\TristanCollier\AppData\Local\Microsoft\WindowsApps\wt.exe 
 #/::Run helpFile ; This opens the AutoHotKey documentation for quick reference
 ;#a::Edit ; This opens this file in the default editor for quick editing
 #t::Run todoist
+#c::Run calendar
+#!c::Run addToCalendar
 #a::Run chatgpt
 #y::Run typing
 #Enter::Run terminal
