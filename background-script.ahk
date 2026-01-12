@@ -29,11 +29,11 @@ w::Send(":w")
 q::Send(":q")
 
 ; VD Commander integration
-1:: Run("python ..\pyvda\test.py --switch 1", , "Hide")
-2:: Run("python ..\pyvda\test.py --switch 2", , "Hide")
-3:: Run("python ..\pyvda\test.py --switch 3", , "Hide")
-4:: Run("python ..\pyvda\test.py --switch 4", , "Hide")
-5:: Run("python ..\pyvda\test.py --switch 5", , "Hide")
+1:: Run("python ..\vd-commander\test.py --switch 1", , "Hide")
+2:: Run("python ..\vd-commander\test.py --switch 2", , "Hide")
+3:: Run("python ..\vd-commander\test.py --switch 3", , "Hide")
+4:: Run("python ..\vd-commander\test.py --switch 4", , "Hide")
+5:: Run("python ..\vd-commander\test.py --switch 5", , "Hide")
 
 
 
@@ -129,6 +129,7 @@ spotify := "chrome.exe --new-window --app=https://open.spotify.com/playlist/140t
 typing := "chrome.exe --new-window --app=https://monkeytype.com/"
 chatgpt := "chrome.exe --new-window --app=https://chatgpt.com/"
 calendar := "chrome.exe --new-window --app=https://calendar.google.com/calendar/u/0/r/day?pli=1"
+excalidraw := "chrome.exe --new-window --app=https://excalidraw.com/"
 addToCalendar := "chrome.exe --new-window --app=https://cal.new/"
 helpFile := A_ProgramFiles "\AutoHotkey\v2\AutoHotkey.chm"
 terminal := "C:\Users\TristanCollier\AppData\Local\Microsoft\WindowsApps\wt.exe -p Ubuntu"
@@ -138,6 +139,7 @@ terminal := "C:\Users\TristanCollier\AppData\Local\Microsoft\WindowsApps\wt.exe 
 #/::Run helpFile ; This opens the AutoHotKey documentation for quick reference
 ;#a::Edit ; This opens this file in the default editor for quick editing
 #t::Run todoist
+#x::Run excalidraw
 #c::Run calendar
 #!c::Run addToCalendar
 #a::Run chatgpt
@@ -147,11 +149,11 @@ terminal := "C:\Users\TristanCollier\AppData\Local\Microsoft\WindowsApps\wt.exe 
 
 
 ;----------------------------<{ VD Commander }> 
-#1:: Run "python ..\pyvda\test.py --switch 1"
-#2:: Run "python ..\pyvda\test.py --switch 2"
-#3:: Run "python ..\pyvda\test.py --switch 3"
-#4:: Run "python ..\pyvda\test.py --switch 4"
-#5:: Run "python ..\pyvda\test.py --switch 5"
+#1:: Run "python ..\vd-commander\test.py --switch 1"
+#2:: Run "python ..\vd-commander\test.py --switch 2"
+#3:: Run "python ..\vd-commander\test.py --switch 3"
+#4:: Run "python ..\vd-commander\test.py --switch 4"
+#5:: Run "python ..\vd-commander\test.py --switch 5"
 
 ; Some alt F4 action!
 #p:: Send "!{f4}"
