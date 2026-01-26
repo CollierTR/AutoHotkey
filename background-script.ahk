@@ -34,6 +34,7 @@ q::Send(":q")
 3:: Run("python ..\vd-commander\test.py --switch 3", , "Hide")
 4:: Run("python ..\vd-commander\test.py --switch 4", , "Hide")
 5:: Run("python ..\vd-commander\test.py --switch 5", , "Hide")
+6:: Run("python ..\vd-commander\test.py --switch 6", , "Hide")
 
 
 
@@ -154,6 +155,7 @@ terminal := "C:\Users\TristanCollier\AppData\Local\Microsoft\WindowsApps\wt.exe 
 #3:: Run "python ..\vd-commander\test.py --switch 3"
 #4:: Run "python ..\vd-commander\test.py --switch 4"
 #5:: Run "python ..\vd-commander\test.py --switch 5"
+#6:: Run "python ..\vd-commander\test.py --switch 6"
 
 ; Some alt F4 action!
 #p:: Send "!{f4}"
