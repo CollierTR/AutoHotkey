@@ -122,9 +122,18 @@ Esc::CapsLock
 
 ;----------------------------<{ Shortcuts }> 
 
+if (A_UserName = "trist") {
+    distro := "archlinux"
+} else if (A_UserName = "TristanCollier") {
+    distro := "Ubuntu"
+} else {
+    distro := "unknown"
+}
+
+
 ; Application/Link Variables
 chromePath := "C:\Program Files\Google\Chrome\Application\chrome.exe"
-downloadsPath := "C:\Users\Trist\Downloads"
+downloadsPath := "C:\Users\" A_UserName "\Downloads"
 todoist := "chrome.exe --new-window --app=https://app.todoist.com/app/today"
 spotify := "chrome.exe --new-window --app=https://open.spotify.com/playlist/140tJ4I1234W5u8F4J5PcV"
 typing := "chrome.exe --new-window --app=https://monkeytype.com/"
@@ -133,9 +142,12 @@ calendar := "chrome.exe --new-window --app=https://calendar.google.com/calendar/
 excalidraw := "chrome.exe --new-window --app=https://excalidraw.com/"
 addToCalendar := "chrome.exe --new-window --app=https://cal.new/"
 helpFile := A_ProgramFiles "\AutoHotkey\v2\AutoHotkey.chm"
-terminal := "C:\Users\TristanCollier\AppData\Local\Microsoft\WindowsApps\wt.exe -p Ubuntu"
+terminal := "C:\Users\" . A_UserName . "\AppData\Local\Microsoft\WindowsApps\wt.exe -p " . distro
+tempProfile := A_Temp "\chrome-stream-profile"
+
 
 #b::Run chromePath ; Open Chrome
+#i::Run(chromePath . ' --user-data-dir="' tempProfile '" --no-first-run --disable-sync')
 #o::Run downloadsPath ; This Shortcut opens the Downloads folder
 #/::Run helpFile ; This opens the AutoHotKey documentation for quick reference
 ;#a::Edit ; This opens this file in the default editor for quick editing
